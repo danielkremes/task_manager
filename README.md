@@ -21,6 +21,7 @@ Este projeto é uma **API do gerenciador de tarefas** criada com o **Spring Boot
 - Lombok**: Simplifica o código boilerplate.
 - Jakarta Persistence API (JPA)**: Para ORM e gerenciamento de entidades.
 - Banco de dados Postgresql: Para testes ou como um banco de dados durante o desenvolvimento.
+- Starter Validator: Para usar o beanValidation.
 
 ## Pré-requisitos
 
@@ -86,6 +87,12 @@ Para executar esse projeto, verifique se você tem o seguinte instalado:
 - **Variável de caminho**: `completed` (booleano) - `true` para tarefas concluídas, `false` para tarefas incompletas.
 - **Resposta**: Lista de tarefas filtradas por status de conclusão.
 
+# Validações
+- **title**: não pode ser nulo ou vazio, máximo de caracteres 256
+- **description**: não pode ser nulo ou vazio, máximo de caracteres 256
+- **completed**: não pode ser null
+- *dueDate*: não pode ser null
+
 ## Execução do aplicativo
 
 1. Clone o repositório:
@@ -93,4 +100,4 @@ Para executar esse projeto, verifique se você tem o seguinte instalado:
    git clone https://github.com/your-username/task-manager-api.git
    cd task-manager-api
 
-Última atualização: 12/2/2025
+Última atualização: 17/2/2025
