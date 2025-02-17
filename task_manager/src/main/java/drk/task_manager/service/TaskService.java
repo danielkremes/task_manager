@@ -30,7 +30,7 @@ public class TaskService {
         Task task = taskRepository.findById(id).orElseThrow(() -> new RuntimeException("task not found"));
         task.setTitle(taskDescription.getTitle());
         task.setDescription(taskDescription.getDescription());
-        task.setCompleted(taskDescription.isCompleted());
+        task.setCompleted(taskDescription.getCompleted());
         task.setDueDate(taskDescription.getDueDate());
         return task;
     }

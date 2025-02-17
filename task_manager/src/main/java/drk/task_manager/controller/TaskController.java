@@ -2,6 +2,7 @@ package drk.task_manager.controller;
 
 import drk.task_manager.entity.Task;
 import drk.task_manager.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task createTask(@RequestBody Task task) {
+    public Task createTask(@Valid @RequestBody Task task) {
         return taskService.createTask(task);
     }
 
@@ -41,7 +42,7 @@ public class TaskController {
     }
 
     @GetMapping("/status/{completed}")
-    public List<Task> getTaskByStatus(@PathVariable boolean completed) {
+    public List<Task> getTaskByStatus(@PathVariable Boolean completed) {
         return taskService.getTaskByStatus(completed);
     }
 
